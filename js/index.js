@@ -19,7 +19,8 @@ var data = [
 
 function clickListener(e) {
     //画像クリック時発火
-    var img_number = String(e.target.getAttribute("id")).substring(3);//画像ファイル名取得後，一番最後の数字を切り出し
+    var img_name = e.target.getAttribute("id");//画像ファイル名取得
+    var img_number = String(img_name).substring(3);//一番最後の数字を切り出し
     if (img_number == answer) {
         //画像番号がanswerと一致すれば
         alert("正解！！！");
@@ -36,10 +37,11 @@ function display_img() {
 
     answer = data[data_set_num].ANSWER;//answer変数にANSWERを格納
 
-    document.querySelectorAll("img").forEach((imgElm) => {
-        //html内のすべてのimgタグに対して
-        imgElm.addEventListener('click', clickListener);//「画像をクリックしたら，clickListener関数が発火する」というイベントを追加
-    })
+    var img_list = document.querySelectorAll("img");//html内のすべてのimageタグを取得する
+    for (img of img_list) {
+        //すべてimageタグ
+        img.addEventListener('click', clickListener);//「画像をクリックしたら，clickListener関数が発火する」というイベントを追加
+    }
 
     for (i = 1; i <= 6; i++) {
         //i=1から6まで繰り返す
