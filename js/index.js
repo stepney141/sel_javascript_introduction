@@ -1,4 +1,5 @@
 var answer = "";
+var set = 0;
 var data = [
     {
         "QUESTION": "フンボルトペンギン",
@@ -30,7 +31,9 @@ function clickListener(e) {
 }
 
 function display_img() {
-    var data_set_num = Math.floor(Math.random() * 3);//0から2のランダムな数を生成
+    var data_set_num = set;//set変数に入っている値を取得
+    var data_size = data.length;//dataセットの数
+    set = (set + 1) % data_size;//{set変数の値に1足した数}を{dataセットの数}で割った時のあまりを新たにセット。(これでdisplay_img()を呼び出すごとに0,1,2,0,1,2...と繰り返し代入される)
 
     var question = document.getElementById("question");//idがquestionのタグを取得する
     question.innerHTML = `${data[data_set_num].QUESTION}を選べ！`;//問題文を設定する
