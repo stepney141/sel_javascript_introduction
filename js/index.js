@@ -35,12 +35,13 @@ function clickListener(e) {
     }
 }
 
-function display_img() {
+function set_quiz() {
 
     //ボタンを次に押したときに表示されるクイズのデータを指定する
     let data_set_num = set;//set変数に入っている値を取得
     let data_size = data.length;//dataセットの数
-    set = (set + 1) % data_size;//{set変数の値に1足した数}を{dataセットの数}で割った時のあまりを新たにセット。(これでdisplay_img()を呼び出すごとに0,1,2,0,1,2...と繰り返し代入される)
+    set = (set + 1) % data_size;//{set変数の値に1足した数}を{dataセットの数}で割った時のあまりを新たにセット。
+    //(これでdisplay_img()を呼び出すごとに0,1,2,0,1,2...と繰り返し代入される)
 
     //問題文を表示する
     let question = document.getElementById("question");//idがquestionのタグを取得する
