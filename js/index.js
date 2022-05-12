@@ -1,5 +1,4 @@
-let data = [
-    {
+let quiz_metadata = [{
         QUESTION: "フンボルトペンギン",
         DIR: "penguin",
         ANSWER: "6"
@@ -18,10 +17,11 @@ let data = [
 
 function clickListener(e) {
     //クイズ画像をクリックすると実行される
+
 }
 
 function set_quiz() {
-
+    
 }
 
 document.getElementById("set_quiz").addEventListener("click", set_quiz);
